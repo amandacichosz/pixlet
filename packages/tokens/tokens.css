@@ -1,0 +1,58 @@
+/* Primitive values */
+:root {
+  --pix-purple-300: #b9a9ff;
+  --pix-purple-400: #a48dff;
+  --pix-purple-500: #6950dd;
+  --pix-purple-600: #543ac8;
+  --pix-green-300: #87dbb2;
+  --pix-green-400: #6acb9b;
+  --pix-green-600: #247452;
+  --pix-green-700: #175b3e;
+  --pix-neutral-0: #ffffff;
+  --pix-neutral-100: #eeeaf8;
+  --pix-neutral-200: #d5d0e2;
+  --pix-neutral-600: #625b75;
+  --pix-neutral-900: #25213a;
+  --pix-neutral-950: #1a1728;
+  --pix-spacing-2: 8px;
+  --pix-spacing-3: 12px;
+  --pix-spacing-4: 16px;
+  --pix-radius-md: 8px;
+  --pix-font-family: Inter, system-ui, sans-serif;
+}
+
+/* Semantic roles and appearance. Light values also support older browsers. */
+:root {
+  --pix-color-primary: var(--pix-purple-500);
+  --pix-color-primary-hover: var(--pix-purple-600);
+  --pix-color-on-primary: var(--pix-neutral-0);
+  --pix-color-text: var(--pix-neutral-900);
+  --pix-color-surface: var(--pix-neutral-0);
+  --pix-color-border: var(--pix-neutral-200);
+}
+
+:root,
+[data-pix-mode='auto'] { color-scheme: light dark; }
+[data-pix-mode='light'] { color-scheme: light; }
+[data-pix-mode='dark'] { color-scheme: dark; }
+
+[data-pix-theme='forest'] {
+  --pix-color-primary: var(--pix-green-600);
+  --pix-color-primary-hover: var(--pix-green-700);
+}
+
+@supports (color: light-dark(white, black)) {
+  :root {
+    --pix-color-primary: light-dark(var(--pix-purple-500), var(--pix-purple-300));
+    --pix-color-primary-hover: light-dark(var(--pix-purple-600), var(--pix-purple-400));
+    --pix-color-on-primary: light-dark(var(--pix-neutral-0), var(--pix-neutral-950));
+    --pix-color-text: light-dark(var(--pix-neutral-900), var(--pix-neutral-100));
+    --pix-color-surface: light-dark(var(--pix-neutral-0), var(--pix-neutral-950));
+    --pix-color-border: light-dark(var(--pix-neutral-200), var(--pix-neutral-600));
+  }
+
+  [data-pix-theme='forest'] {
+    --pix-color-primary: light-dark(var(--pix-green-600), var(--pix-green-300));
+    --pix-color-primary-hover: light-dark(var(--pix-green-700), var(--pix-green-400));
+  }
+}

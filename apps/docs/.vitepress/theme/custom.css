@@ -1,0 +1,15 @@
+:root {
+  --vp-c-brand-1: #6950dd;
+  --vp-c-brand-2: #543ac8;
+  --vp-c-brand-3: #8069e8;
+}
+.pix-demo-preview {
+  padding: 24px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  margin: 16px 0 24px;
+}
+
+/* VitePress controls the docs appearance independently of the OS preference. */
+html:root { color-scheme: light; }
+html.dark:root { color-scheme: dark; }

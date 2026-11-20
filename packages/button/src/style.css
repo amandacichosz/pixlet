@@ -1,0 +1,42 @@
+.pix-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--pix-button-gap, var(--pix-spacing-2, 8px));
+  font-family: var(--pix-font-family, system-ui, sans-serif);
+  font-weight: 600;
+  line-height: 1.2;
+  border-radius: var(--pix-button-radius, var(--pix-radius-md, 8px));
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+.pix-button--sm { font-size: 12px; padding: 7px 12px; }
+.pix-button--md { font-size: 14px; padding: 11px 16px; }
+.pix-button--primary {
+  background-color: var(--pix-button-bg, var(--pix-color-primary, #6950dd));
+  color: var(--pix-button-fg, var(--pix-color-on-primary, #fff));
+}
+.pix-button--primary:hover:not(:disabled) {
+  background-color: var(--pix-button-hover-bg, var(--pix-color-primary-hover, #543ac8));
+}
+.pix-button--secondary {
+  background-color: var(--pix-button-secondary-bg, transparent);
+  color: var(--pix-button-secondary-fg, var(--pix-color-primary, #6950dd));
+  border-color: currentColor;
+}
+.pix-button:focus-visible { outline: 3px solid var(--pix-button-focus-ring, var(--pix-color-primary, #6950dd)); outline-offset: 3px; }
+.pix-button:disabled { cursor: not-allowed; opacity: 0.55; }
+.pix-button__spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: pix-spin 0.7s linear infinite;
+}
+@keyframes pix-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .pix-button { transition: none; }
+  .pix-button__spinner { animation: none; }
+}
