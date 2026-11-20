@@ -1,0 +1,75 @@
+.pix-header {
+  --pix-header-title-size: 1.5rem;
+  --pix-header-subtitle-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: var(--pix-spacing-4, 16px);
+  font-family: var(--pix-font-family, system-ui, sans-serif);
+  color: var(--pix-color-text, inherit);
+}
+
+.pix-header--page {
+  --pix-header-title-size: 2rem;
+  --pix-header-subtitle-size: 1rem;
+}
+
+.pix-header--card {
+  --pix-header-title-size: 1.25rem;
+}
+
+.pix-header--small {
+  --pix-header-title-size: 1rem;
+  --pix-header-subtitle-size: 0.75rem;
+}
+
+.pix-header__text {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.pix-header__title {
+  font-size: var(--pix-header-title-size);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.pix-header__subtitle {
+  font-size: var(--pix-header-subtitle-size);
+  line-height: 1.5;
+}
+
+.pix-header__subtitle.pix-header__subtitle-list {
+  --pix-header-subtitle-gap: var(--pix-spacing-4, 16px);
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--pix-header-subtitle-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.pix-header__subtitle-list > .pix-header__subtitle-item {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+}
+
+/* A bullet sits in the gap before its item and is clipped at the start of a row. */
+.pix-header__subtitle-bullet {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 100%;
+  inline-size: var(--pix-header-subtitle-gap);
+  text-align: center;
+}
+
+.pix-header__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--pix-spacing-2, 8px);
+}

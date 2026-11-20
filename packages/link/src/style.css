@@ -1,0 +1,39 @@
+button[data-pix-link] {
+  appearance: none;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+  text-transform: inherit;
+}
+
+a[href][data-pix-link],
+button[data-pix-link] {
+  color: var(--pix-link-color, var(--pix-color-primary, LinkText));
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+}
+
+a[href][data-pix-link]:is(:hover, :focus-visible),
+button[data-pix-link]:enabled:is(:hover, :focus-visible) {
+  color: var(--pix-link-hover-color, var(--pix-color-primary-hover, LinkText));
+  text-decoration-style: solid;
+}
+
+a[href][data-pix-link]:focus-visible,
+button[data-pix-link]:focus-visible {
+  outline: 2px solid var(--pix-link-focus-ring, currentColor);
+  outline-offset: 3px;
+}
+
+button[data-pix-link]:disabled {
+  color: GrayText;
+  cursor: not-allowed;
+}

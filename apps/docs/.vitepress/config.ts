@@ -3,6 +3,9 @@ import { defineConfig } from 'vitepress'
 
 const workspace = new URL('../../../', import.meta.url)
 const buttonSource = new URL('packages/button/src/', workspace)
+const cardSource = new URL('packages/card/src/', workspace)
+const headerSource = new URL('packages/header/src/', workspace)
+const linkSource = new URL('packages/link/src/', workspace)
 
 export default defineConfig({
   title: 'Pixlet',
@@ -18,9 +21,15 @@ export default defineConfig({
           alias: [
             { find: /^@pixlet\/button$/, replacement: fileURLToPath(new URL('index.ts', buttonSource)) },
             { find: /^@pixlet\/button\/style\.css$/, replacement: fileURLToPath(new URL('style.css', buttonSource)) },
+            { find: /^@pixlet\/card$/, replacement: fileURLToPath(new URL('index.ts', cardSource)) },
+            { find: /^@pixlet\/card\/style\.css$/, replacement: fileURLToPath(new URL('style.css', cardSource)) },
+            { find: /^@pixlet\/header$/, replacement: fileURLToPath(new URL('index.ts', headerSource)) },
+            { find: /^@pixlet\/header\/style\.css$/, replacement: fileURLToPath(new URL('style.css', headerSource)) },
+            { find: /^@pixlet\/link$/, replacement: fileURLToPath(new URL('index.ts', linkSource)) },
+            { find: /^@pixlet\/link\/style\.css$/, replacement: fileURLToPath(new URL('style.css', linkSource)) },
           ],
         },
-        optimizeDeps: { exclude: ['@pixlet/button'] },
+        optimizeDeps: { exclude: ['@pixlet/button', '@pixlet/card', '@pixlet/header', '@pixlet/link'] },
         server: { fs: { allow: [fileURLToPath(workspace)] } },
       }),
     }],
@@ -41,7 +50,12 @@ export default defineConfig({
       },
       {
         text: 'Components',
-        items: [{ text: 'Button', link: '/components/button' }]
+        items: [
+          { text: 'Button', link: '/components/button' },
+          { text: 'Card', link: '/components/card' },
+          { text: 'Header', link: '/components/header' },
+          { text: 'Link', link: '/components/link' }
+        ]
       }
     ],
     search: { provider: 'local' }

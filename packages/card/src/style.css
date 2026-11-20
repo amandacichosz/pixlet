@@ -1,0 +1,30 @@
+.pix-card {
+  --pix-card-padding: var(--pix-spacing-4, 16px);
+  border-radius: calc(var(--pix-radius-md, 8px) * 1.5);
+  background-color: var(--pix-color-surface, Canvas);
+  color: var(--pix-color-text, CanvasText);
+  font-family: var(--pix-font-family, system-ui, sans-serif);
+}
+
+.pix-card--shadow {
+  box-shadow: var(--pix-card-shadow, 0 1px 3px rgb(0 0 0 / 12%), 0 8px 24px rgb(0 0 0 / 10%));
+}
+
+.pix-card--border {
+  border: 1px solid var(--pix-color-border, GrayText);
+  box-shadow: none;
+}
+
+.pix-card__header,
+.pix-card__content,
+.pix-card__footer {
+  padding: var(--pix-card-padding, var(--pix-spacing-4, 16px));
+}
+
+.pix-card__header {
+  border-block-end: 1px solid var(--pix-color-border, GrayText);
+}
+
+.pix-card__content + .pix-card__footer {
+  padding-block-start: 0;
+}

@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@pixlet/button": "workspace:*",
+    "@pixlet/card": "workspace:*",
+    "@pixlet/header": "workspace:*",
+    "@pixlet/link": "workspace:*",
     "@pixlet/tokens": "workspace:*",
     "vue": "^3.5.0"
   },
